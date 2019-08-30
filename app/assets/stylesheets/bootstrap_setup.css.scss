@@ -1,0 +1,38 @@
+$body-color: white;
+$yiq-text-dark: white;
+$display-size: 2.5rem;
+$jumbotron-bg: rgba(255,255,255,0.2);
+$link-color:white; //red
+$link-hover-color: white;
+
+$jumbotron-color: white;
+
+$theme-colors: (
+  "primary": #8fbb90
+);
+@import "bootstrap";
+
+.container-background {
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+	background-image: url(image_path('bg.jpg'));
+}
+$text-color: green;
+
+.title {
+	color: $text-color;
+}
+.introduction {
+	color: $text-color;
+}
+.main-part{
+	color: $text-color;
+}
+.conclusion{
+	color: $text-color;
+}
+.jumbotron-landing {
+	width: 50%;
+	margin: 0 auto;
+}
