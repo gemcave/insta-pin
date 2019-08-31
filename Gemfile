@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
