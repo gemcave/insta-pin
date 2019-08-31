@@ -5,6 +5,11 @@ $display-size: 2.5rem;
 $jumbotron-bg: rgba(255,255,255,0.4);
 $link-color:white; //red
 $link-hover-color: white;
+// $card-color:                        null !default;
+$card-bg:  rgba(255,255,255,0.1);
+$card-cap-bg: rgba(255,255,255,0.3);   
+$card-color: black;
+$card-cap-color: black;
 
 $jumbotron-color: white;
 
@@ -33,4 +38,8 @@ $text-color: green;
 }
 .landing-logo {
 	 font-size: 4rem ;
+}
+.devise-form {
+	width: 50%;
+	margin: 0 auto;
 }
