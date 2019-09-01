@@ -40,8 +40,7 @@ class PhotosController < ApplicationController
   def destroy
     @photo.destroy
 			redirect_to photos_url, notice: 'Photo was successfully destroyed.'
-		end
-  end
+		end 
 
   private
     def set_photo
