@@ -3,6 +3,7 @@
   <thead>
     <tr>
       <th>Description</th>
+      <th>User Email</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -11,15 +12,19 @@
     <% @photos.each do |photo| %>
       <tr>
         <td><%= photo.description %></td>
+        <td><%= photo.user.email if photo.user %></td>
         <td><%= link_to 'Show', photo %></td>
-        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<td><% if photo.user == current_user %>
+        <%= link_to 'Edit', edit_photo_path(photo) %><% end %></td>
+        <td><% if photo.user == current_user %>
+				<%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Photo', new_photo_path, class: "btn btn-primary" %>
+<% if user_signed_in? %>
+	<%= link_to 'New Photo', new_photo_path, class: "btn btn-primary" %>
+<% end %>
 </div>
