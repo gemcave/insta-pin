@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Romanesco&display=swap');
 $body-color: black;
+$body-bg: #bdc4c7;
 $yiq-text-dark: black;
 $display-size: 2.5rem;
 $jumbotron-bg: rgba(255,255,255,0.4);
@@ -28,6 +29,7 @@ $text-color: green;
 .container-login {
 	padding-right: 0;
 	padding-left: 0;
+	text-align: center;
 }
 .bg-transparent {
 	background-color: rgba(255,255,255,0);
@@ -43,10 +45,7 @@ $text-color: green;
 	margin: 0 auto;
 }
 .photo-form {
-	width: 50%;
+	display: inline-block;
 	margin: 0 auto;
-}
-.bg-grey {
-	background-color: #bdc4c7;
-	height: 100vh;
+	text-align: left;
 }

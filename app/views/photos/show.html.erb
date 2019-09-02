@@ -1,15 +1,14 @@
 <div class="card photo-form">
 <div class="card-body">
 <p>
-<%= image_tag @photo.image.url %>
-  <strong>Description:</strong>
-  <%= @photo.description %>
+<%= image_tag @photo.image.url(:large) %><br>
+  <strong><%= @photo.description %></strong>
 	<br>
-  <strong>User Email:</strong>
 	<%= @photo.user.email if @photo.user %>
 </p>
 
 <% if @photo.user == current_user %> <%= link_to 'Edit', edit_photo_path(@photo) %> |<% end %>
+<%= link_to 'Destroy', @photo, method: :delete, data: { confirm: 'Are you sure?' } %>|
 <%= link_to 'Back', photos_path %>
 	</div>
 </div>
