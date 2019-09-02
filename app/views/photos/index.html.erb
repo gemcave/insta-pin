@@ -1,27 +1,16 @@
 <div class="jumbotron">
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>User Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
     <% @photos.each do |photo| %>
-      <tr>
-        <td><%= photo.description %></td>
-        <td><%= photo.user.email if photo.user %></td>
-        <td><%= link_to 'Show', photo %></td>
-				<td><% if photo.user == current_user %>
-        <%= link_to 'Edit', edit_photo_path(photo) %><% end %></td>
-        <td><% if photo.user == current_user %>
-				<%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></td>
-      </tr>
+				<%= image_tag photo.image.url(:medium) %>
+        <%= photo.description %>
+        <%= photo.user.email if photo.user %>
+        <%= link_to 'Show', photo %>
+				<% if photo.user == current_user %>
+        	<%= link_to 'Edit', edit_photo_path(photo) %>
+					<%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+				<% end %>
+      
     <% end %>
-  </tbody>
-</table>
 
 <br>
 <% if user_signed_in? %>

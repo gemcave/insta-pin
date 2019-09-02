@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
+gem "paperclip", "~> 6.0.0"
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
