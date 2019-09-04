@@ -29,6 +29,7 @@
 
 /public/packs
 /public/packs-test
+/public/system/photos/images
 /node_modules
 /yarn-error.log
 yarn-debug.log*

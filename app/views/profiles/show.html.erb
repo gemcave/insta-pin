@@ -1,8 +1,12 @@
-<%= @user.id%>
 <%= @user.email%>
-<%= link_to "Подписаться", subscribe_profile_path(@user)%><br>
-<%= link_to "Отписаться", un subscribe_profile_path(@user)%>
-
+<% if current_user.id == @user.id%>
+<% else %>
+	<% if current_user.subscriptions.exists?(friend_id: @user.id) %>
+		<%= link_to "Отписаться", unsubscribe_profile_path(@user)%>
+	<% else %>
+		<%= link_to "Подписаться", subscribe_profile_path(@user)%><br>
+	<% end %>
+<% end %>
 <br>
     <% @user.photos.each do |photo| %>
 		<div class="card photo-form">
