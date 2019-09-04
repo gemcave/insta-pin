@@ -11,6 +11,15 @@
 					<%= link_to current_user.email, edit_user_registration_path, class: "nav-link " %>
 				</li>
 				<li class="nav-item">
+					<%= link_to "Мои фото", profiles_my_photos_path, class: "nav-link " %>
+				</li>
+				<li class="nav-item">
+					<%= link_to "Мои подписки", profiles_subscribe_list_path, class: "nav-link " %>
+				</li>
+				<li class="nav-item">
+					<%= link_to "Фото друзей", profiles_friends_photos_path, class: "nav-link " %>
+				</li>
+				<li class="nav-item">
 					<%= link_to "Выйти", destroy_user_session_path, method: :delete, class: "nav-link " %>
 				</li>
 			</ul>

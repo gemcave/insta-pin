@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
-	before_action :set_user
-
+	before_action :set_user, except: [:my_photos,:subscribe_list,:friends_photos]
+	
 	def show 
 	end
 
@@ -34,8 +34,21 @@ class ProfilesController < ApplicationController
 			end
 		end
 	end
-	
-	def set_user
-		@user = User.find(params[:id])
+
+	def my_photos
+		@photos = current_user.photos.order('created_at DESC')
 	end
+
+	def subscribe_list
+		@friends = User.where(id: current_user.subscriptions.pluck(:friendid))
+	end
+
+	def friends_photos
+		@photos = Photo.where(id: current_user.subscriptions.pluck(:friendid)).order('created_at DESC')
+	end
+
+private
+		def set_user
+			@user = User.find(params[:id])
+		end
 end

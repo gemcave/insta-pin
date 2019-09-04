@@ -1,0 +1,9 @@
+    <% @friends.each do |friend| %>
+		<div class="card photo-form">
+ 			 <div class="card-body">
+        <strong><%= friend.description %></strong><br>
+        <%= link_to friend.email, profile_path(friend.id) %><br>
+				<%= link_to "Подписаться", subscribe_profile_path(friend.id)%><br>
+      	</div>
+      </div><br>
+    <% end %>
