@@ -1,11 +1,14 @@
+<%= @user.id%>
+<%= @user.email%>
+<%= link_to "Подписаться", subscribe_profile_path(@user)%><br>
+<%= link_to "Отписаться", un subscribe_profile_path(@user)%>
 
-
-    <% @photos.each do |photo| %>
+<br>
+    <% @user.photos.each do |photo| %>
 		<div class="card photo-form">
  			 <div class="card-header">
 				<%= image_tag photo.image.url(:medium) %><br>
         <strong><%= photo.description %></strong><br>
-        <%= link_to photo.user.email, profile_path(photo.user_id) if photo.user %><br>
         <%= link_to 'Show', photo %>
 				<% if photo.user == current_user %> |
         	<%= link_to 'Edit', edit_photo_path(photo) %> |
@@ -14,8 +17,3 @@
       	</div>
       </div>
     <% end %>
-
-<br>
-<% if user_signed_in? %>
-	<%= link_to 'New Photo', new_photo_path, class: "btn btn-primary" %>
-<% end %>
