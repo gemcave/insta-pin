@@ -24,7 +24,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
 gem "paperclip", "~> 6.0.0"
-
+gem 'aws-sdk', '~> 3.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
