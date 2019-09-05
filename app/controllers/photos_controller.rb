@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
   before_action :owner, only:[:edit, :update,  :destroy]
 
   def index
-    @photos = Photo.all.order('created_at DESC')
+    @photos = Photo.all.order('created_at DESC').paginate(page: params[:page], per_page: 6)
 	end
 	
   def show

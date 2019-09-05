@@ -25,6 +25,8 @@ gem 'jquery-rails'
 
 gem "paperclip", "~> 6.0.0"
 gem 'aws-sdk', '~> 3.0'
+gem 'will_paginate-bootstrap4'
+gem 'will_paginate', '~> 3.1', '>= 3.1.8'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

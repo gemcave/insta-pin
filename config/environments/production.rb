@@ -100,6 +100,8 @@ Rails.application.configure do
 			s3_region: ENV.fetch('AWS_REGION'),
 		}
 	}
+	config.public_file_server.enabled = true
+
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write

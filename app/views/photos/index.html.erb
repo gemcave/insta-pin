@@ -14,8 +14,11 @@
       	</div>
       </div>
     <% end %>
+		<br><br>
+		<%= will_paginate @photos,list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 
 <br>
 <% if user_signed_in? %>
 	<%= link_to 'New Photo', new_photo_path, class: "btn btn-primary" %>
 <% end %>
+<br><br>
