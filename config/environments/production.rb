@@ -79,7 +79,16 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
 	# config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
-	config.action_mailer.default_url_options = { host: 'http://insta-pin.herokuapp.com/', port: 3000 }
+	config.action_mailer.default_url_options = { host: 'http://insta-pin.herokuapp.com/'}
+	config.action_mailer.delivery_method = :smtp
+	config.action_mailer.smtp_settings = {
+		address:              'smtp.gmail.com',
+		port:                 587,
+		domain:               'http://insta-pin.herokuapp.com/',
+		user_name:            ENV.fetch('MAIL_ACCOUNT_NAME'),
+		password:             ENV.fetch('MAIL_PASSWORD'),
+		authentication:       'plain',
+		enable_starttls_auto: true }
 
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?

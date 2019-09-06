@@ -28,6 +28,7 @@ gem 'aws-sdk', '~> 3.0'
 gem 'will_paginate-bootstrap4'
 gem 'will_paginate', '~> 3.1', '>= 3.1.8'
 
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -47,6 +48,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 	# Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
+gem "letter_opener"
 end
 
 group :production do
